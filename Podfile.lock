@@ -1,0 +1,54 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
+  - CLTypingLabel (0.4.0)
+  - LinearProgressBar (1.0.2)
+  - PieCharts (0.0.7)
+  - Realm (10.34.1):
+    - Realm/Headers (= 10.34.1)
+  - Realm/Headers (10.34.1)
+  - RealmSwift (10.34.1):
+    - Realm (= 10.34.1)
+  - SwiftAlgorithms (1.0.0)
+  - SwipeCellKit (2.7.1)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - Charts
+  - CLTypingLabel
+  - LinearProgressBar
+  - PieCharts
+  - RealmSwift (~> 10)
+  - SwipeCellKit
+
+SPEC REPOS:
+  trunk:
+    - ChameleonFramework
+    - Charts
+    - CLTypingLabel
+    - LinearProgressBar
+    - PieCharts
+    - Realm
+    - RealmSwift
+    - SwiftAlgorithms
+    - SwipeCellKit
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
+  CLTypingLabel: 95a7d1faf7e3d1d952cd11cb0491d17d80c50934
+  LinearProgressBar: 619d6f286b608e501f39406557f60cdab3faf910
+  PieCharts: 30e50dfa7dc19e5b84e9878d32089673ef5d0453
+  Realm: fe824cd5b183cd55a50a6bcb4bce3ac1650e60b6
+  RealmSwift: c7f668f82982fc8b62366b78b8dc761f15141df6
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+
+PODFILE CHECKSUM: 83d8eb64beb4fd4ffa09dc1bd521786b33242f85
+
+COCOAPODS: 1.11.3
