@@ -2,7 +2,7 @@
 //  PayingAct.swift
 //  ZahlungList
 //
-//  Created by Hiba Agha on 03.02.23.
+//  Created by Heba Thabet Agha on 03.02.23.
 //
 
 import Foundation

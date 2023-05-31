@@ -2,7 +2,7 @@
 //  WelcomeViewController.swift
 //  ZahlungList
 //
-//  Created by Hiba Agha on 15.02.23.
+//  Created by Heba Thabet Agha on 15.02.23.
 //
 
 import UIKit
