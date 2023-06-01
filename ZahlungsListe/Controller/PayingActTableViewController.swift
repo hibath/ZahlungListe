@@ -50,9 +50,6 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         if let payingAct = payingActArry?[indexPath.row] {
             cell.name.text = payingAct.title
             cell.value.text = String(payingAct.value)+" $"
-//            cell.backgroundColor = UIColor(hexString: selectedCategory?.color).darken(byPercentage: CGFloat(indexPath.row)/CGFloat(payingActArry!.count+10))
-//            cell.name.textColor = ContrastColorOf(backgroundColor: cell.backgroundColor!, returnFlat: true)
-//            cell.value.textColor  = ContrastColorOf(backgroundColor: cell.backgroundColor!, returnFlat: true)
         }
         return cell
         
@@ -128,31 +125,6 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         present(alert, animated: true, completion: nil)
     }
     
-//    func saveData(pay: PayingAct) {
-//        do {
-//            try  realm.write {
-//                 realm.add(pay)
-//            }
-//        } catch {
-//            print("error trying save data")
-//        }
-//    }
-
-
-//
-//    func savedata() {
-//    do {
-//        try  context.save()
-//        print("saved successfully")
-//        }
-//        catch {
-//            print ("error saving msg, \(error)")
-//
-//        }
-//        self.tableView.reloadData()
-//    }
-//
-//
     func loadPayingact(){
         
         payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
@@ -169,8 +141,6 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
                 }
             }
         Sum.text = "Total: "+String(sume)+" $"
-//        Sum.backgroundColor = UIColor(hexString: selectedCategory?.color).darken(byPercentage: CGFloat(3)/CGFloat(payingActArry!.count+10))
-//        Sum.textColor = ContrastColorOf(backgroundColor:Sum.backgroundColor!, returnFlat: true)
     }
     
     
