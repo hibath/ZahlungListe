@@ -11,6 +11,5 @@ import RealmSwift
 class Category : Object{
     
     @objc dynamic var name: String = ""
-    @objc dynamic var color: String = ""
     var payings = List<PayingAct>()
 }

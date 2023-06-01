@@ -21,9 +21,6 @@ class CaregoryCell: SwipeTableViewCell{
 
 
 class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
-//    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("cat.plist")
-//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-  //  var categoryArray : Results<Category>?
     var categoryArray : [Category]?
     var payingactArray = [PayingAct]()
     var totalPaying = 0
@@ -38,14 +35,7 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
         tableView.rowHeight = 80
         categoryArray = categoryMG.loadCategories()
         tableView.reloadData()
-        
-        //loadCategories()
-
         print(Realm.Configuration.defaultConfiguration.fileURL)
-      //  print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        // Do any additional setup after loading the view.
-        
-        print("*****************")
         getExpenses()
     }
     
@@ -53,27 +43,7 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-    
-//load in core data
-//    func  loadCategories() {
-//        // Create a fetch request for a specific Entity type
-//        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
-//
-//        // Fetch all objects of one Entity type
-//        do {
-//        categoryArray = try context.fetch(fetchRequest)
-//        }
-//        catch {
-//            print("error fetching data")
-//        }
-//        tableView.reloadData()
-//    }
-  
-//    func  loadCategories() -> [Category] {
-//        categoryArray = realm.objects(Category.self)
-//        return Array(categoryArray!)
-//        tableView.reloadData()
-//    }
+
     
     func saveData(cat: Category) {
         do {
@@ -93,7 +63,6 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
            //what will happen when the user click the adding button on our alert
             let newCat = Category()
             newCat.name = textField.text!
-            newCat.color = UIColor.randomFlat().hexValue()
             self.saveData(cat: newCat)
             self.tableView.reloadData()
         }
@@ -123,9 +92,6 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
             let p = getPaying(category: cat)
             cell.name.text = cat.name
             cell.value.text = String(p)+" $"
-           // cell.backgroundColor = UIColor(hexString: cat.color)
-           // cell.name.textColor = ContrastColorOf(backgroundColor: cell.backgroundColor!, returnFlat: true)
-           // cell.value.textColor  = ContrastColorOf(backgroundColor: cell.backgroundColor!, returnFlat: true)
         }
         return cell
     }
@@ -172,58 +138,7 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
             destinationVC.selectedCategory = categoryArray?[indexPath.row]
         }
     }
-        
-    
-//    func savedata() {
-//    do {
-//        try  context.save()
-//        }
-//        catch {
-//            print ("error saving msg, \(error)")
-//
-//        }
-//        self.tableView.reloadData()
-//    }
-    
-    
-//    func calculateSum() {
-//        var sume : Int = 0
-//        for i in payingActArry {
-//            if i.parentCat?.name == selectedCategory?.name {
-//                sume = sume + Int(i.amount)
-//            }
-//        }
-//        Sum.text = String(sume)
-//
-//    }
- //core data
-//    func getPaying(category: Category) -> Int {
-//        var sum : Int = 0
-//        // Create a fetch request for a specific Entity type
-//        let fetchRequest: NSFetchRequest<PayingAct> = PayingAct.fetchRequest()
-//        let categoryPredicate = NSPredicate(format: "parentCat.name MATCHES %@", category.name!)
-//        fetchRequest.predicate = categoryPredicate
-//        // Fetch all objects of one Entity type
-//        do {
-//            payingactArray = try context.fetch(fetchRequest)
-//            if let payingArray = payingactArray as [PayingAct]? {
-//
-//                for i in payingArray {
-//                    if i.parentCat?.name == category.name {
-//                        sum = sum + Int(i.amount)
-//                    }
-//                }
-//
-//            }
-//        }
-//        catch {
-//            print("error fetching data")
-//        }
-//        return sum
-//    }
-    
-    
-    
+
     func getPaying(category: Category) -> Int {
         var sum : Int = 0
         let payingArray = category.payings

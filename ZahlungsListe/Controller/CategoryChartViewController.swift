@@ -97,7 +97,6 @@ class CategoryChartViewController: UIViewController {
             //what will happen when the user click the adding button on our alert
             let newCategory = Category()
             newCategory.name = textField.text!
-            newCategory.color = UIColor.randomFlat().hexValue()
             categoryMG.saveData(category: newCategory)
             // it should reload the array cuz the table reads from the array
             // we need to reload the category array
