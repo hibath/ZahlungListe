@@ -4,5 +4,5 @@
 
 
 # Technologies Used
-CocoaPods dependency manager
-Realm Swift
+- CocoaPods dependency manager
+- Realm Swift
