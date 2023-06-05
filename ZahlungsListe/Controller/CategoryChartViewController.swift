@@ -65,7 +65,7 @@ class CategoryChartViewController: UIViewController {
         tableView.reloadData()
         let expenses = categoryMG.getExpenses()
         categoriesArray = Array(categoryMG.loadCategories())
-        totalLabel.text = String(expenses.total())
+        totalLabel.text = String(expenses.total())+" $"
         budgetLabel.text = String(budgetMG.getBudget().value)+" $"
         let left = budgetMG.getBudget().value - expenses.total()
         leftLabel.text = String(left)+" $ left"
@@ -164,17 +164,20 @@ class CategoryChartViewController: UIViewController {
         fileprivate func createModels(sortedExpensesDic: [(String,Int)]) -> [PieSliceModel] {
             var colorIndex = 0
             var pieElements = [PieSliceModel]()
-            let colorsArray = [UIColor(hexString: "7DC6FF")!
-                               ,UIColor(hexString: "52BDFF")!
-                               ,UIColor(hexString: "95CADB")!
-                               ,UIColor(hexString: "4683B7")!
-                               ,UIColor(hexString: "4168E0")!
-                               ,UIColor(hexString: "4D6CE1")!
-                               ,UIColor(hexString: "008081")!
+            let colorsArray = [UIColor(hexString: "98c1d9")!
+                               ,UIColor(hexString: "e0fbfc")!
+                               ,UIColor(hexString: "ee6c4d")!
+                               ,UIColor(hexString: "edf2f4")!
+                               ,UIColor(hexString: "e5e5e5")!
+                               ,UIColor(hexString: "a69cac")!
                                ,UIColor(hexString: "3FE0D0")!
-                               ,UIColor(hexString: "79F6FC")!
+                               ,UIColor(hexString: "52BDFF")!
+                              
+                              
+                               
+                               
                                ,UIColor(hexString: "81D8D0")!
-                               ,UIColor(hexString: "52BDFF")!]
+                               ,     UIColor(hexString: "4168E0")!]
             
             for (key,value) in sortedExpensesDic {
                 print("\(key): \(value)")
