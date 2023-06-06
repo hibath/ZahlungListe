@@ -2,7 +2,7 @@
 //  CategoryRepositoryInterface.swift
 //  ZahlungList
 //
-//  Created by Hiba Agha on 18.05.23.
+//  Created by Heba Thabet Agha on 18.05.23.
 //
 
 import Foundation
