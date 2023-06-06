@@ -39,18 +39,6 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         tableView.rowHeight = 80
         tableView.reloadData()
     }
-    
-    
-    func updateModel(at indexPath: IndexPath) {
-       do {
-           try self.realm.write {
-               self.realm.delete(self.payingActArry![indexPath.row])
-           }
-       } catch {
-           print("error deleting PayingAct,\(error)")
-       }
-   }
-    
         
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField1 = UITextField()
@@ -111,8 +99,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
-            self.updateModel(at: indexPath)
-            print("deleted")
+            self.payingActManager.updateModel(payingAct: self.payingActArry![indexPath.row])
             self.payingActArry = self.payingActManager.loadPayingact(category: self.selectedCategory!)
             // handle action by updating model with deletion
         }
