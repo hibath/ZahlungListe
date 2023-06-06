@@ -34,18 +34,12 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     override func viewDidLoad() {
         super.viewDidLoad()
         payingActArry = payingActManager.loadPayingact(category: selectedCategory!)
-      //  loadPayingact()
         totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
         sum.text = "Total: "+String(totalPaying)+" $"
         tableView.rowHeight = 80
         tableView.reloadData()
     }
     
-    
-//    func loadPayingact(){
-//        payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
-//        tableView.reloadData()
-//    }
     
     func updateModel(at indexPath: IndexPath) {
        do {

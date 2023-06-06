@@ -18,7 +18,6 @@
 		CF9DB783299CE53900770DB5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9DB782299CE53900770DB5 /* WelcomeViewController.swift */; };
 		CFB66501299E400F005AB5E2 /* CategoryChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB66500299E400F005AB5E2 /* CategoryChartViewController.swift */; };
 		CFB6650329A0996C005AB5E2 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB6650229A0996C005AB5E2 /* Budget.swift */; };
-		CFB9900429D4417400279024 /* addCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB9900329D4417400279024 /* addCategoryViewController.swift */; };
 		CFFA903C297FCB8600A6A6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903B297FCB8600A6A6A9 /* AppDelegate.swift */; };
 		CFFA903E297FCB8600A6A6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903D297FCB8600A6A6A9 /* SceneDelegate.swift */; };
 		CFFA9040297FCB8600A6A6A9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903F297FCB8600A6A6A9 /* CategoryViewController.swift */; };
@@ -41,7 +40,6 @@
 		CF9DB782299CE53900770DB5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CFB66500299E400F005AB5E2 /* CategoryChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartViewController.swift; sourceTree = "<group>"; };
 		CFB6650229A0996C005AB5E2 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
-		CFB9900329D4417400279024 /* addCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCategoryViewController.swift; sourceTree = "<group>"; };
 		CFFA9038297FCB8600A6A6A9 /* ZahlungsListe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZahlungsListe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFA903B297FCB8600A6A6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFA903D297FCB8600A6A6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		CFFA9053297FCDA200A6A6A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CFB9900329D4417400279024 /* addCategoryViewController.swift */,
 				CFFA903F297FCB8600A6A6A9 /* CategoryViewController.swift */,
 				CFFA9054297FE74100A6A6A9 /* PayingActTableViewController.swift */,
 				CF9DB782299CE53900770DB5 /* WelcomeViewController.swift */,
@@ -295,7 +292,6 @@
 				CF9DB75F298CFFA400770DB5 /* Category.swift in Sources */,
 				CF94A8502A161632005AF27E /* BudgetManager.swift in Sources */,
 				CFB66501299E400F005AB5E2 /* CategoryChartViewController.swift in Sources */,
-				CFB9900429D4417400279024 /* addCategoryViewController.swift in Sources */,
 				CF9DB783299CE53900770DB5 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

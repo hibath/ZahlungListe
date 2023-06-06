@@ -338,22 +338,6 @@
             </objects>
             <point key="canvasLocation" x="1944.8" y="49.50738916256158"/>
         </scene>
-        <!--Add Category View Controller-->
-        <scene sceneID="p1E-YE-lCc">
-            <objects>
-                <viewController id="n6t-89-wkz" customClass="addCategoryViewController" customModule="ZahlungsListe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MXv-TS-Jb6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="TCI-jq-hjN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="gcF-BK-teo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdt-XY-URD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2836" y="564.53201970443354"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="10q-bJ-rn8">
             <objects>
