@@ -20,7 +20,6 @@
 		CFB6650329A0996C005AB5E2 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB6650229A0996C005AB5E2 /* Budget.swift */; };
 		CFFA903C297FCB8600A6A6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903B297FCB8600A6A6A9 /* AppDelegate.swift */; };
 		CFFA903E297FCB8600A6A6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903D297FCB8600A6A6A9 /* SceneDelegate.swift */; };
-		CFFA9040297FCB8600A6A6A9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA903F297FCB8600A6A6A9 /* CategoryViewController.swift */; };
 		CFFA9043297FCB8600A6A6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFA9041297FCB8600A6A6A9 /* Main.storyboard */; };
 		CFFA9048297FCB8700A6A6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFFA9047297FCB8700A6A6A9 /* Assets.xcassets */; };
 		CFFA904B297FCB8700A6A6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFA9049297FCB8700A6A6A9 /* LaunchScreen.storyboard */; };
@@ -43,7 +42,6 @@
 		CFFA9038297FCB8600A6A6A9 /* ZahlungsListe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZahlungsListe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFA903B297FCB8600A6A6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFFA903D297FCB8600A6A6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFFA903F297FCB8600A6A6A9 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		CFFA9042297FCB8600A6A6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFFA9047297FCB8700A6A6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFFA904A297FCB8700A6A6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		CFFA9053297FCDA200A6A6A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CFFA903F297FCB8600A6A6A9 /* CategoryViewController.swift */,
 				CFFA9054297FE74100A6A6A9 /* PayingActTableViewController.swift */,
 				CF9DB782299CE53900770DB5 /* WelcomeViewController.swift */,
 				CFB66500299E400F005AB5E2 /* CategoryChartViewController.swift */,
@@ -279,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFFA9040297FCB8600A6A6A9 /* CategoryViewController.swift in Sources */,
 				CFFA9055297FE74100A6A6A9 /* PayingActTableViewController.swift in Sources */,
 				CF9DB761298D002400770DB5 /* PayingAct.swift in Sources */,
 				CF952B032A169B91009E2C85 /* CategoryRepositoryProtocol.swift in Sources */,

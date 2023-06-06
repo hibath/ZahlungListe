@@ -31,7 +31,6 @@ class CategoryChartViewController: UIViewController {
     
     var categoryMG = CategoryManager()
     var budgetMG = BudgetManager()
-    var categoryVC = CategoryViewController()
     @IBOutlet weak var pieChart: PieChart!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var budgetLabel: UILabel!
