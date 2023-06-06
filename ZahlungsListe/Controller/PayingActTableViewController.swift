@@ -25,7 +25,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     @IBOutlet weak var sum: UILabel!
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("payingAct.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var payingActArry : Results<PayingAct>?
+    var payingActArry : [PayingAct]?
     var selectedCategory : Category?
     var payingActManager = PayingActManager()
     var totalPaying = 0
@@ -33,11 +33,70 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPayingact()
+        payingActArry = payingActManager.loadPayingact(category: selectedCategory!)
+      //  loadPayingact()
         totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
         sum.text = "Total: "+String(totalPaying)+" $"
         tableView.rowHeight = 80
+        tableView.reloadData()
     }
+    
+    
+//    func loadPayingact(){
+//        payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
+//        tableView.reloadData()
+//    }
+    
+    func updateModel(at indexPath: IndexPath) {
+       do {
+           try self.realm.write {
+               self.realm.delete(self.payingActArry![indexPath.row])
+           }
+       } catch {
+           print("error deleting Category,\(error)")
+       }
+   }
+        
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField1 = UITextField()
+        var textField2 = UITextField()
+        let alert = UIAlertController(title: "Add New paying", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "adding", style: .default) { action1 in
+           //what will happen when the user click the adding button on our alert
+            do {
+                try self.realm.write{
+                    let newpay = PayingAct()
+                    newpay.title = textField1.text!
+                    newpay.value = Int(textField2.text!) ?? 0
+                    self.selectedCategory?.payings.append(newpay)
+                }
+            }
+            catch{
+                print("error saving pays")
+            }
+            self.tableView.reloadData()
+            self.totalPaying = self.payingActManager.calculateSum(parentCategory: self.selectedCategory!)
+            self.sum.text = "Total: "+String(self.totalPaying)+" $"
+        }
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "add new paying here"
+            textField1 = alertTextField
+        }
+
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "add the value here"
+            textField2 = alertTextField
+        }
+
+        alert.addAction(action)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {
+            action in
+                 // Called when user taps outside
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+
+    
     
     
     // MARK: - Table view data source
@@ -81,57 +140,5 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         return options
     }
     
-    func updateModel(at indexPath: IndexPath) {
-       do {
-           try self.realm.write {
-               self.realm.delete(self.payingActArry![indexPath.row])
-           }
-       } catch {
-           print("error deleting Category,\(error)")
-       }
-   }
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        var textField1 = UITextField()
-        var textField2 = UITextField()
-        let alert = UIAlertController(title: "Add New paying", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "adding", style: .default) { action1 in
-           //what will happen when the user click the adding button on our alert
-            do {
-                try self.realm.write{
-                    let newpay = PayingAct()
-                    newpay.title = textField1.text!
-                    newpay.value = Int(textField2.text!) ?? 0
-                    self.selectedCategory?.payings.append(newpay)
-                }
-            }
-            catch{
-                print("error saving pays")
-            }
-            self.tableView.reloadData()
-            self.totalPaying = self.payingActManager.calculateSum(parentCategory: self.selectedCategory!)
-            self.sum.text = "Total: "+String(self.totalPaying)+" $"
-        }
-        alert.addTextField { alertTextField in
-            alertTextField.placeholder = "add new paying here"
-            textField1 = alertTextField
-        }
 
-        alert.addTextField { alertTextField in
-            alertTextField.placeholder = "add the value here"
-            textField2 = alertTextField
-        }
-
-        alert.addAction(action)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {
-            action in
-                 // Called when user taps outside
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func loadPayingact(){
-        payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
-        tableView.reloadData()
-    }
-    
 }
