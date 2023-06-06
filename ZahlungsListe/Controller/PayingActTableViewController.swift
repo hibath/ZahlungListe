@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 import SwipeCellKit
 import ChameleonFramework
 
@@ -21,7 +20,6 @@ class PayingCell: SwipeTableViewCell {
 
 class PayingActTableViewController: UITableViewController, SwipeTableViewCellDelegate {
     
-    let realm = try! Realm()
     @IBOutlet weak var sum: UILabel!
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("payingAct.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
