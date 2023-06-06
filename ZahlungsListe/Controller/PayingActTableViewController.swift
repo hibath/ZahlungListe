@@ -28,12 +28,13 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     var payingActArry : Results<PayingAct>?
     var selectedCategory : Category?
     var payingActManager = PayingActManager()
+    var totalPaying = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPayingact()
-        let totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
+        totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
         sum.text = "Total: "+String(totalPaying)+" $"
         tableView.rowHeight = 80
     }
@@ -107,7 +108,8 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
                 print("error saving pays")
             }
             self.tableView.reloadData()
-            self.calculateSum()
+            self.totalPaying = self.payingActManager.calculateSum(parentCategory: self.selectedCategory!)
+            self.sum.text = "Total: "+String(self.totalPaying)+" $"
         }
         alert.addTextField { alertTextField in
             alertTextField.placeholder = "add new paying here"
@@ -130,17 +132,6 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     func loadPayingact(){
         payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
         tableView.reloadData()
-    }
-    
-
-    func calculateSum() {
-        var sume : Int = 0
-        if let paying = selectedCategory?.payings {
-            for i in paying{
-                    sume = sume + Int(i.value)
-                }
-            }
-        sum.text = "Total: "+String(sume)+" $"
     }
     
 }
