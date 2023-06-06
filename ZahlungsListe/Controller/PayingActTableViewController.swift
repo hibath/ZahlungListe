@@ -58,17 +58,10 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         let alert = UIAlertController(title: "Add New paying", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "adding", style: .default) { action1 in
            //what will happen when the user click the adding button on our alert
-            do {
-                try self.realm.write{
-                    let newpay = PayingAct()
-                    newpay.title = textField1.text!
-                    newpay.value = Int(textField2.text!) ?? 0
-                    self.selectedCategory?.payings.append(newpay)
-                }
-            }
-            catch{
-                print("error saving pays")
-            }
+            let newPayingAct = PayingAct()
+            newPayingAct.title = textField1.text!
+            newPayingAct.value = Int(textField2.text!) ?? 0
+            self.payingActManager.saveData(payingAct: newPayingAct, selectedCategory: self.selectedCategory!)
             self.payingActArry = self.payingActManager.loadPayingact(category: self.selectedCategory!)
             self.tableView.reloadData()
             self.totalPaying = self.payingActManager.calculateSum(parentCategory: self.selectedCategory!)
