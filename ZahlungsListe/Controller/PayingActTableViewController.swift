@@ -47,9 +47,10 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
                self.realm.delete(self.payingActArry![indexPath.row])
            }
        } catch {
-           print("error deleting Category,\(error)")
+           print("error deleting PayingAct,\(error)")
        }
    }
+    
         
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField1 = UITextField()
@@ -68,6 +69,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
             catch{
                 print("error saving pays")
             }
+            self.payingActArry = self.payingActManager.loadPayingact(category: self.selectedCategory!)
             self.tableView.reloadData()
             self.totalPaying = self.payingActManager.calculateSum(parentCategory: self.selectedCategory!)
             self.sum.text = "Total: "+String(self.totalPaying)+" $"
@@ -118,12 +120,12 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
             // handle action by updating model with deletion
             self.updateModel(at: indexPath)
             print("deleted")
+            self.payingActArry = self.payingActManager.loadPayingact(category: self.selectedCategory!)
             // handle action by updating model with deletion
         }
 
         // customize the action appearance
         deleteAction.image = UIImage(named: "delete-icon")
-
         return [deleteAction]
     }
     
