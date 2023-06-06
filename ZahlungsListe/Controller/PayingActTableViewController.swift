@@ -22,17 +22,19 @@ class PayingCell: SwipeTableViewCell {
 class PayingActTableViewController: UITableViewController, SwipeTableViewCellDelegate {
     
     let realm = try! Realm()
-    @IBOutlet weak var Sum: UILabel!
+    @IBOutlet weak var sum: UILabel!
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("payingAct.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var payingActArry : Results<PayingAct>?
     var selectedCategory : Category?
+    var payingActManager = PayingActManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadPayingact()
-        calculateSum()
+        let totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
+        sum.text = "Total: "+String(totalPaying)+" $"
         tableView.rowHeight = 80
     }
     
@@ -126,11 +128,9 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     }
     
     func loadPayingact(){
-        
         payingActArry = selectedCategory?.payings.sorted(byKeyPath: "title")
         tableView.reloadData()
     }
-    
     
 
     func calculateSum() {
@@ -140,9 +140,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
                     sume = sume + Int(i.value)
                 }
             }
-        Sum.text = "Total: "+String(sume)+" $"
+        sum.text = "Total: "+String(sume)+" $"
     }
-    
-    
     
 }

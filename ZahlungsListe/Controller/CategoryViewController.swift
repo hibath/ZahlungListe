@@ -25,8 +25,7 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
     var totalPaying = 0
     let realm = try! Realm()
     let categoryMG = CategoryManager()
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,8 +87,6 @@ class CategoryViewController: UITableViewController, SwipeTableViewCellDelegate{
             print("error deleting Category,\(error)")
         }
     }
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! PayingActTableViewController

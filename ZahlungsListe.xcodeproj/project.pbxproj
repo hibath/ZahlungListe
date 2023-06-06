@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E7D706D87A3E8FD97331CD5 /* Pods_ZahlungList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF4FFEC7D2A58D068377BE8 /* Pods_ZahlungList.framework */; };
+		CF1BCFBB2A2F6D7300EE88AF /* PayingActManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1BCFBA2A2F6D7300EE88AF /* PayingActManager.swift */; };
 		CF94A84E2A123E17005AF27E /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF94A84D2A123E17005AF27E /* CategoryManager.swift */; };
 		CF94A8502A161632005AF27E /* BudgetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF94A84F2A161632005AF27E /* BudgetManager.swift */; };
 		CF952B002A1684B9009E2C85 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF952AFF2A1684B9009E2C85 /* Expenses.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		86D8269BCEF8CD7F24CCC559 /* Pods-ZahlungList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZahlungList.debug.xcconfig"; path = "Target Support Files/Pods-ZahlungList/Pods-ZahlungList.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B262609712E930ECDFC806 /* Pods-ZahlungList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZahlungList.release.xcconfig"; path = "Target Support Files/Pods-ZahlungList/Pods-ZahlungList.release.xcconfig"; sourceTree = "<group>"; };
+		CF1BCFBA2A2F6D7300EE88AF /* PayingActManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayingActManager.swift; sourceTree = "<group>"; };
 		CF94A84D2A123E17005AF27E /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		CF94A84F2A161632005AF27E /* BudgetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetManager.swift; sourceTree = "<group>"; };
 		CF952AFF2A1684B9009E2C85 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				CF952B022A169B91009E2C85 /* CategoryRepositoryProtocol.swift */,
 				CF94A84D2A123E17005AF27E /* CategoryManager.swift */,
+				CF1BCFBA2A2F6D7300EE88AF /* PayingActManager.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				CF952B002A1684B9009E2C85 /* Expenses.swift in Sources */,
 				CFFA903C297FCB8600A6A6A9 /* AppDelegate.swift in Sources */,
 				CFFA903E297FCB8600A6A6A9 /* SceneDelegate.swift in Sources */,
+				CF1BCFBB2A2F6D7300EE88AF /* PayingActManager.swift in Sources */,
 				CF94A84E2A123E17005AF27E /* CategoryManager.swift in Sources */,
 				CFB6650329A0996C005AB5E2 /* Budget.swift in Sources */,
 				CF9DB75F298CFFA400770DB5 /* Category.swift in Sources */,
