@@ -36,8 +36,6 @@ class CategoryChartViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var budgetLabel: UILabel!
     @IBOutlet weak var leftLabel: UILabel!
-    //var expenses = Expenses()
-    //var sortedExpensesDic = [(String,Int)]()
     var categoriesArray : [Category]?
     let realm = try! Realm()
     var sliceSelected : PieSlice?
@@ -160,8 +158,7 @@ class CategoryChartViewController: UIViewController {
     // MARK: -  PieChartDelegate
 
     extension CategoryChartViewController:  PieChartDelegate {
-        
-        
+                
         fileprivate func createModels(sortedExpensesDic: [(String,Int)]) -> [PieSliceModel] {
             var colorIndex = 0
             var pieElements = [PieSliceModel]()
@@ -173,12 +170,8 @@ class CategoryChartViewController: UIViewController {
                                ,UIColor(hexString: "a69cac")!
                                ,UIColor(hexString: "3FE0D0")!
                                ,UIColor(hexString: "52BDFF")!
-                              
-                              
-                               
-                               
                                ,UIColor(hexString: "81D8D0")!
-                               ,     UIColor(hexString: "4168E0")!]
+                               ,UIColor(hexString: "4168E0")!]
             
             for (key,value) in sortedExpensesDic {
                 print("\(key): \(value)")
@@ -189,7 +182,6 @@ class CategoryChartViewController: UIViewController {
                         colorIndex = 0
                     }
                 }
-                //print("\(key): \(value)")
             }
             return(pieElements)
         }
@@ -247,27 +239,9 @@ class CategoryChartViewController: UIViewController {
                     container.addSubview(specialTextLabel)
                     container.frame.size = CGSize(width: 100, height: 60)
                 }
-                            
-                // src of images: www.freepik.com, http://www.flaticon.com/authors/madebyoliver
-                let imageName: String? = {
-                    switch slice.data.id {
-                    case 0: return "fish"
-                    case 1: return "grapes"
-                    case 2: return "doughnut"
-                    case 3: return "water"
-                    case 4: return "chicken"
-                    case 5: return "beet"
-                    case 6: return "cheese"
-                    default: return nil
-                    }
-                }()
-                
-                view.image = imageName.flatMap{UIImage(named: $0)}
                 return container
             }
         }
-        
-        
     }
 
 

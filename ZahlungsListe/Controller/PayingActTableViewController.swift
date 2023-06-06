@@ -3,7 +3,8 @@
 //  ZahlungList
 //
 //  Created by Heba Thabet Agha on 24.01.23.
-//
+//  Customizing Cell, Cocoapods: SwipeCellKit
+
 
 import UIKit
 import SwipeCellKit
@@ -11,9 +12,7 @@ import ChameleonFramework
 
 
 class PayingCell: SwipeTableViewCell {
-    
     @IBOutlet weak var name: UILabel!
-    
     @IBOutlet weak var value: UILabel!
 }
 
@@ -21,13 +20,11 @@ class PayingCell: SwipeTableViewCell {
 class PayingActTableViewController: UITableViewController, SwipeTableViewCellDelegate {
     
     @IBOutlet weak var sum: UILabel!
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("payingAct.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var payingActArry : [PayingAct]?
     var selectedCategory : Category?
     var payingActManager = PayingActManager()
     var totalPaying = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +68,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
         present(alert, animated: true, completion: nil)
     }
 
-    
-    
-    
     // MARK: - Table view data source
-
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return payingActArry?.count ?? 1
@@ -89,12 +82,10 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
             cell.value.text = String(payingAct.value)+" $"
         }
         return cell
-        
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
-
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
             self.payingActManager.updateModel(payingAct: self.payingActArry![indexPath.row])
