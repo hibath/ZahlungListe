@@ -27,7 +27,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     var totalPaying = 0
     
     override func viewDidLoad() {
-        super.viewDidLoad() // try linking
+        super.viewDidLoad()
         payingActArry = payingActManager.loadPayingact(category: selectedCategory!)
         totalPaying = payingActManager.calculateSum(parentCategory: selectedCategory!)
         sum.text = "Total: "+String(totalPaying)+" $"
