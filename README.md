@@ -4,8 +4,9 @@
 
 
 # Technologies Used
-- CocoaPods dependency manager
+- CocoaPods dependency manager (PiChart, ...)
 - Realm Swift
+- 
 
 
 ![Alt text](
