@@ -36,7 +36,7 @@ class PayingActTableViewController: UITableViewController, SwipeTableViewCellDel
     }
         
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        var textField1 = UITextField() 
+        var textField1 = UITextField() // delete comment 
         var textField2 = UITextField()
         let alert = UIAlertController(title: "Add New paying", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "adding", style: .default) { action1 in
